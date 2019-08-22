@@ -1,1 +1,21 @@
-<p>home works!</p>
+<!--por cada usuario dentro de friends me lo va a imprimir, i es igual al indice de cada dato-->
+
+<!--ng-container es una etiqueta que me ayuda a usar más de una directiva-->
+<br> <br>
+Estos son tus amigos
+<ng-container *ngFor="let user of friends; let i = index">
+  <div *ngIf="user.friend">
+    <a routerLink='/conversation/{{user.uid}}'>
+      {{i}}.{{user.nick}} - {{user.email}}
+      </a>
+  </div>
+</ng-container>
+
+<br> <br>
+Estos no son tus amigos
+<ng-container *ngFor="let user of friends; let i = index">
+
+  <p *ngIf="user.friend == false">
+    {{i}}.{{user.nick}} - {{user.email}}
+  </p>
+</ng-container>
