@@ -1,7 +1,7 @@
 <!--por cada usuario dentro de friends me lo va a imprimir, i es igual al indice de cada dato-->
 
 <!--ng-container es una etiqueta que me ayuda a usar más de una directiva-->
-<br> <br>
+<!-- <br> <br>
 Estos son tus amigos
 <ng-container *ngFor="let user of friends; let i = index">
   <div *ngIf="user.friend">
@@ -9,13 +9,54 @@ Estos son tus amigos
       {{i}}.{{user.nick}} - {{user.email}}
       </a>
   </div>
-</ng-container>
+</ng-container> -->
 
-<br> <br>
-Estos no son tus amigos
+<div class="homeContainer">
+
+  <div class="whiteBorderGlassBox">
+    <div class="homeHeadContainer">
+      <div class="row">
+        <div class="col-md-auto">
+          <div class="avatarFrameOnline">
+              <img src="../../assets/img/generic_avatar.png" class="homeAvatarPicture" srcset="">
+          </div>
+        </div>
+        <div class="col">
+          <b>UserName</b>
+          <div>
+            <span>Online</span>
+            <br>
+            <span>< Escribe un mensaje personal ></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <input type="text" placeholder="Buscar amigo" [(ngModel)]="query">
+  <br> <br>
+  Estos son tus amigos
+  <ng-container *ngFor="let user of friends | search: query; let i = index">
+    <div>
+      <div *ngIf="">
+
+      </div>
+      <a routerLink='/conversation/{{user.uid}}'>
+        <!-- Aquí cambia la imagen dependiendo del estado de la persona -->
+        <img src="../../assets/img/logo_live_{{user.status}}.png" alt="${{user.status}}" class="user-status">
+        {{i}}.{{user.nick}} - {{user.email}}
+      </a>
+    </div>
+  </ng-container>
+
+  <br> <br>
+</div>
+
+
+<!-- Estos no son tus amigos
 <ng-container *ngFor="let user of friends; let i = index">
 
   <p *ngIf="user.friend == false">
     {{i}}.{{user.nick}} - {{user.email}}
   </p>
-</ng-container>
+</ng-container> -->

@@ -1,2 +1,12 @@
 
-<p>conversation works!</p>
+<p>Hola {{friend.nick}} {{friend.subnick}}</p>
+<!-- Usando pipes, esto sirve para mostrar los datos como queremos, esto no afecta el valor del dato en sí  -->
+<p>{{friend | json}} </p>
+
+<p>
+    {{numero | number:"1.2-2"}}
+</p>
+
+<p>
+    {{today | date: 'medium'}}
+</p>

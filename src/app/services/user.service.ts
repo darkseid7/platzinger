@@ -17,7 +17,8 @@ export class UserService {
       age: 18,
       email: 'saoquendo5@gmail.com',
       friend: true,
-      uid: '1'
+      uid: '1',
+      status: 'online'
     }
 
     let User2: User = {
@@ -26,7 +27,8 @@ export class UserService {
       age: 19,
       email: 'ctr@gmail.com',
       friend: true,
-      uid: '2'
+      uid: '2',
+      status: 'offline'
     }
 
     let User3: User = {
@@ -35,7 +37,8 @@ export class UserService {
       age: 19,
       email: 'andres@gmail.com',
       friend: true,
-      uid: '3'
+      uid: '3',
+      status: 'busy'
     }
 
     let User4: User = {
@@ -44,7 +47,8 @@ export class UserService {
       age: 19,
       email: 'jlezcano@gmail.com',
       friend: true,
-      uid: '4'
+      uid: '4',
+      status: 'away'
     }
 
     let User5: User = {
@@ -53,7 +57,8 @@ export class UserService {
       age: 19,
       email: 'alexis@gmail.com',
       friend: false,
-      uid: '5'
+      uid: '5',
+      status: 'online'
     };
 
     //acá referencio a friends y le paso mis usuarios 
@@ -63,7 +68,6 @@ export class UserService {
 
   //creo un método para retornar los valores que tiene friends
   getFriends(){
-    
     return this.friends
   }
 

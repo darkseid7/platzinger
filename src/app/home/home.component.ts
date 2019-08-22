@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Query } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { User } from '../interfaces/user'
 
@@ -10,6 +10,16 @@ import { User } from '../interfaces/user'
 })
 
 export class HomeComponent implements OnInit {
+
+    // creo una variable llamada friends que va a ser igual a User importado de la interfaz user
+    friends: User[]
+    query: string = ''
+    constructor(private userService: UserService){
+      //aquí mi variable friends pasa a tener los datos que están en el servicio nuevamente
+      this.friends = userService.getFriends()
+
+    }
+
 
   // constructor() {
   //   // //así es como defino los tipos de variables en TypeScript
@@ -37,21 +47,6 @@ export class HomeComponent implements OnInit {
     
   //   // console.log(h)
   // }
-  
-  
-  
-  
-  
-  
-  // creo una variable llamada friends que va a ser igual a User importado de la interfaz user
-  friends: User[]
-    constructor(private userService: UserService){
-      //aquí mi variable friends pasa a tener los datos que están en el servicio nuevamente
-      this.friends = userService.getFriends()
-
-    }
-
-   
 
   ngOnInit() {
   }

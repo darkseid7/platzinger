@@ -14,6 +14,8 @@ export class ConversationComponent implements OnInit {
   friendId: any
   friends: User[]
   friend: User
+  numero: number = 1.123456789
+  today: any = Date.now()
 
   constructor(private activatedRoute: ActivatedRoute, userService: UserService) {
     //injecto los datos a la variable friends
